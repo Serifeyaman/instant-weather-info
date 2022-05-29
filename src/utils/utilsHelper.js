@@ -7,7 +7,6 @@ export const getTodayDate = () => {
     const today = new Date().toLocaleDateString('en-GB', {  
         day:   'numeric',
         month: 'short',
-        // year:  'numeric',
     });
     return today;
 }

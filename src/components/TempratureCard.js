@@ -9,7 +9,7 @@ const TempratureCard = ({ item, main, cityWeather }) => {
             <Row>
                 <Col xl="2" lg="2" md="2" sm="2" xs="12" style={{ alignItems: 'center', display: 'flex' }}>
                     <span>
-                        <img src={`http://openweathermap.org/img/wn/${item?.icon}.png`} width={120} height={120} style={{ float: 'left' }} />
+                        <img alt='image' src={`http://openweathermap.org/img/wn/${item?.icon}.png`} width={120} height={120} style={{ float: 'left' }} />
                     </span>
                 </Col>
                 <Col xl="2" lg="2" md="2" sm="2" xs="12" style={{ alignItems: 'center', justifyContent: 'left', display: 'flex' }}>
