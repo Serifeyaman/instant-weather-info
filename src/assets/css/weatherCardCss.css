@@ -1,0 +1,15 @@
+.weather-card{
+    box-shadow: rgba(8, 8, 46, 0.25) 0px 30px 60px -12px inset, rgba(8, 8, 46, 0.25) 0px 18px 36px -18px inset;
+    border:none !important;
+    z-index: 1;
+    position: absolute;
+}
+
+
+.weather-animation{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 20%;
+}
+

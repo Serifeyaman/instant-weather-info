@@ -1,0 +1,22 @@
+.nav-tabs{
+    border-bottom: none !important;
+}
+
+.nav-link{
+    color:whitesmoke !important;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.nav-tabs .nav-link{
+    border:none !important;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+    color: white !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border-bottom: 2px solid #fcba03 !important;
+    font-weight: 600;
+    font-size: 17px;
+}

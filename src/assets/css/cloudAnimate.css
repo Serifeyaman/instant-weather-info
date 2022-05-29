@@ -1,0 +1,13 @@
+.animate-area{
+    width: 100%;
+    height: 100vh;
+    background: url("assets/images/cloud.png");
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    animation: animate 30s linear infinite;
+}
+
+@keyframes animate{
+    from{background-position: 0 0;}
+    to {background-position: 100% 0 ;}
+}
