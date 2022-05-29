@@ -52,7 +52,7 @@ const ApiKeyForm = () => {
                     <Col xl="11" lg="11" md="9" sm="9" xs="9">
                         <InputGroup >
                             <InputGroupText>
-                                <Key size={20} color='gray' />
+                                <Key size={25} color='#22577E' />
                             </InputGroupText>
                             <Input
                                 placeholder='API KEY GİRİNİZ'
