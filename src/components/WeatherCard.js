@@ -9,24 +9,30 @@ import { MapPin, Repeat, Sunrise, Sunset, Thermometer, Wind, XCircle } from 'rea
 import TempratureCard from './TempratureCard';
 import { getHour, tempratureConverter } from 'utils/utilsHelper';
 
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
+
 const WeatherCard = () => {
 
     const { cityWeather } = useSelector(state => state.WeatherReducer)
     const context = useContext(myContext)
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     const concernedElement = document.querySelector(".main-div");
-
-    //     document.addEventListener("mousedown", (event) => {
-    //         if (concernedElement.contains(event.target)) {
-    //             context.setOutClicked(false)
-    //         } else {
-    //             context.setOutClicked(true)
-    //             dispatch(resetWeather())
-    //         }
-    //     });
-    // }, [])
+    useEffect(() => {
+        cityWeather.cod !== 200 &&
+            MySwal.fire({
+                icon: "error",
+                title: "Hata!",
+                text: "İşlem sırasında bir hata meydana geldi!",
+                confirmButtonText: "Tamam",
+                customClass: {
+                    confirmButton: "btn btn-primary ",
+                },
+                confirmButtonColor: "#22577E",
+            })
+    }, [])
 
     let myData = [
         {
@@ -77,7 +83,7 @@ const WeatherCard = () => {
                     <Row style={{ width: '100%', padding: '3%' }}>
                         <Col lg="12" md="12" sm="12">
                             <h2 style={{ color: 'whitesmoke', alignItems: 'center', display: 'flex' }}>
-                                <MapPin size={25} /> <span style={{ marginLeft: '1%', textTransform:'capitalize' }}>{cityWeather?.name}</span>
+                                <MapPin size={25} /> <span style={{ marginLeft: '1%', textTransform: 'capitalize' }}>{cityWeather?.name}</span>
                             </h2>
                         </Col>
                         <Col lg="12" md="12" sm="12">

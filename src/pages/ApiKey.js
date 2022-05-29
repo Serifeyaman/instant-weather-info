@@ -28,7 +28,6 @@ const ApiKey = () => {
                             durationOut={500}
                             animationIn="fadeInUp"
                             animationOut="bounceOut"
-                            // customStyle={{ heigth: '100%', width: '100%' }}
                             className='form-css'
                         >
                             <ApiKeyForm />

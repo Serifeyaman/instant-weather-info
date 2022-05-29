@@ -10,7 +10,6 @@ const MyTurkeyMap = () => {
   const dispatch = useDispatch();
   const { cityWeather } = useSelector(state => state.WeatherReducer)
 
-  //weathercard dışına tıklama olayı için
   const [outClicked, setOutClicked] = useState(false)
 
   const getCityWeather = (cityName) => {
@@ -23,24 +22,22 @@ const MyTurkeyMap = () => {
   }
 
   return (
-    <>
-      <myContext.Provider value={{ setOutClicked: setOutClicked, outClicked: outClicked }}>
-        {
-          cityWeather?.weather?.length > 0
-            ?
-            <WeatherCard cityWeather={cityWeather} />
-            :
-            <TurkeyMap
-              hoverable={true}
-              onClick={({ name }) => getCityWeather(name)}
-              customStyle={{ idleColor: "whitesmoke", hoverColor: "lightgray" }}
-              showTooltip={true}
+    <myContext.Provider value={{ setOutClicked: setOutClicked, outClicked: outClicked }}>
+      {
+        cityWeather?.weather?.length > 0
+          ?
+          <WeatherCard cityWeather={cityWeather} />
+          :
+          <TurkeyMap
+            hoverable={true}
+            onClick={({ name }) => getCityWeather(name)}
+            customStyle={{ idleColor: "whitesmoke", hoverColor: "lightgray" }}
+            showTooltip={true}
 
-            />
+          />
 
-        }
-      </myContext.Provider>
-    </>
+      }
+    </myContext.Provider>
 
   )
 }
