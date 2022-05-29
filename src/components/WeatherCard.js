@@ -15,22 +15,18 @@ const WeatherCard = () => {
     const context = useContext(myContext)
     const dispatch = useDispatch()
 
-    console.log("cityWeather", cityWeather)
+    // useEffect(() => {
+    //     const concernedElement = document.querySelector(".main-div");
 
-    useEffect(() => {
-        const concernedElement = document.querySelector(".main-div");
-
-        document.addEventListener("mousedown", (event) => {
-            if (concernedElement.contains(event.target)) {
-                // console.log("Clicked Inside");
-                context.setOutClicked(false)
-            } else {
-                // console.log("Clicked Outside");
-                context.setOutClicked(true)
-                dispatch(resetWeather())
-            }
-        });
-    }, [])
+    //     document.addEventListener("mousedown", (event) => {
+    //         if (concernedElement.contains(event.target)) {
+    //             context.setOutClicked(false)
+    //         } else {
+    //             context.setOutClicked(true)
+    //             dispatch(resetWeather())
+    //         }
+    //     });
+    // }, [])
 
     let myData = [
         {

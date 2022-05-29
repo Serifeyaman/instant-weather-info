@@ -13,7 +13,7 @@ const MyTurkeyMap = () => {
   //weathercard dışına tıklama olayı için
   const [outClicked, setOutClicked] = useState(false)
 
-  const getCityWeather = (plateNumber, cityName) => {
+  const getCityWeather = (cityName) => {
     let myData = {
       cityName: cityName,
       country: "TR",
@@ -30,32 +30,13 @@ const MyTurkeyMap = () => {
             ?
             <WeatherCard cityWeather={cityWeather} />
             :
-            (cityWeather === undefined && !outClicked) ? (
-              <TurkeyMap
-                hoverable={true}
-                onClick={({ plateNumber, name }) => getCityWeather(plateNumber, name)}
-                customStyle={{ idleColor: "whitesmoke", hoverColor: "lightgray" }}
-                showTooltip={true}
+            <TurkeyMap
+              hoverable={true}
+              onClick={({ name }) => getCityWeather(name)}
+              customStyle={{ idleColor: "whitesmoke", hoverColor: "lightgray" }}
+              showTooltip={true}
 
-              />)
-              :
-              <>
-                <TurkeyMap
-                  hoverable={true}
-                  onClick={({ plateNumber, name }) => getCityWeather(plateNumber, name)}
-                  customStyle={{ idleColor: "whitesmoke", hoverColor: "lightgray" }}
-                  showTooltip={true}
-
-                />
-                <h2>
-                  {cityWeather?.name}
-                </h2>
-                {cityWeather?.weather?.map((item, key) => (
-                  <h4 key={key}>
-                    {item.main}
-                  </h4>
-                ))}
-              </>
+            />
 
         }
       </myContext.Provider>
