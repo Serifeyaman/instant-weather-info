@@ -26,7 +26,7 @@ const TempratureCard = ({ item, main, cityWeather }) => {
                         </h2>
                         <h5 style={{ color: 'whitesmoke'}}>{getTodayDate()}</h5>
                         <h6 style={{ color: 'whitesmoke' }}>Humidity: {main?.humidity} %</h6>
-                        <h6 style={{ color: 'whitesmoke' }}>Wind Speed: {cityWeather?.wind?.speed} km/s</h6>
+                        <h6 style={{ color: 'whitesmoke' }}>Wind Speed: {cityWeather?.wind?.speed} m/h</h6>
                     </span>
 
                 </Col>

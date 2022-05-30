@@ -5,7 +5,7 @@ import { animations } from 'react-animation'
 import { myContext } from 'utils/context/MyContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetWeather } from 'redux/weather/action';
-import { MapPin, Repeat, Sunrise, Sunset, Thermometer, Wind, XCircle } from 'react-feather';
+import { ArrowUp, MapPin, Repeat, Sunrise, Sunset, Thermometer, Wind, XCircle } from 'react-feather';
 import TempratureCard from './TempratureCard';
 import { getHour, tempratureConverter } from 'utils/utilsHelper';
 
@@ -37,13 +37,13 @@ const WeatherCard = () => {
     let myData = [
         {
             id: 1,
-            title: "Wind Degree",
+            title: "Wind Direction",
             icon: <Wind size={18} color='#fcba03' />,
-            value: `${cityWeather?.wind?.deg} °C`,
+            value: <span><ArrowUp size={18} style={{ transform: `rotate(${cityWeather?.wind?.deg}deg)` }} /> {cityWeather?.wind?.gust ? `(${cityWeather?.wind?.gust} m/h)` : ""} </span>,
         },
         {
             id: 2,
-            title: "Air Pressure",
+            title: "Atm. Pressure",
             icon: <Repeat size={18} color='#fcba03' />,
             value: `${cityWeather?.main?.pressure} hPa`,
         },
